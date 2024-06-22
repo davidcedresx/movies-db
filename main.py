@@ -1,4 +1,3 @@
-from tabulate import tabulate
 import json
 import os
 
@@ -37,23 +36,12 @@ def print_movie(movie):
 
 
 while True:
-    table = []
-
-    for movie in movies_db:
-        table.append(
-            [
-                movies_db[movie]["title"],
-                movies_db[movie]["director"],
-                movies_db[movie]["genre"],
-                movies_db[movie]["year"],
-                movies_db[movie]["cast"],
-            ]
-        )
-
     clear()
 
     print("MOVIES")
-    print(tabulate(table))
+
+    for movie in movies_db.values():
+        print_movie(movie)
 
     print("")
     print("COMMANDS")
